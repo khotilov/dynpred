@@ -68,8 +68,8 @@ void prederrw(
       /* find indices for censoring and survival at t and tw */
       idxsurvt=0; j=1; while ((j<nsurv) & (tsurv[j]<=t)) {j++; idxsurvt++;}
       idxcenst=0; j=1; while ((j<ncens) & (tcens[j]<=t)) {j++; idxcenst++;}
-      idxsurvtw=0; j=1; while ((j<nsurv) & (tsurv[j]<=tw)) {j++; idxsurvtw++;}
-      idxcenstw=0; j=1; while ((j<ncens) & (tcens[j]<=tw)) {j++; idxcenstw++;}
+      idxsurvtw=0; j=1; while ((j<nsurv) && (tsurv[j]<=tw)) {j++; idxsurvtw++;}
+      idxcenstw=0; j=1; while ((j<ncens) && (tcens[j]<=tw)) {j++; idxcenstw++;}
 /*
       Rprintf("\tidxsurvt=%d, idxcenst=%d, idxsurvtw=%d, idxcenstw=%d\n",idxsurvt,idxcenst,idxsurvtw,idxcenstw);
    	  R_FlushConsole();
